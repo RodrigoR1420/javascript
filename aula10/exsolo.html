@@ -5,38 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex solos</title>
     <style>
-        #interacion{
-            background-color: darkblue;
-            color: white;
-            width: 200px;
-            height: 200px;
-            line-height: 200px;
-            text-align: center;
-            font-size: 2em;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+       *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+       }
 
-        .calculos{
-            margin-top: 20px;
-        }
+       body{
+        background-color: rgb(75, 3, 142);
+       }
 
-        .result{
-            margin-top: 10px;
-        }
+       header{
+        background-color: rgba(29, 1, 55, 0.851);
+        padding: 30px;
+       }
+
+       header > h1{
+        color: white;
+        text-align: center;
+        font-size: 2em;
+        font-family: Arial, Helvetica, sans-serif;
+       }
+
+       #interacion{
+        font: normal 1.5em arial;
+        background-color: rgb(154, 83, 219);
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+        margin: auto;
+        margin-top: 20px;
+        cursor: pointer;
+       }
+
+       .miniCalculator{
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+       }
+
+       .miniCalculator > input{
+        padding: 10px;
+        background-color: blueviolet;
+        color: aliceblue;
+       }
+
+       .miniCalculator > #Somar{
+        background-color: aliceblue;
+        color: black;
+       }
+
+       #result{
+        text-align: center;
+        margin-top: 20px;
+        font: normal 1.6em Arial;
+       }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Teste para exercicios solito</h1>
+    </header>
+
     <div id="interacion">
-        interaja...
+        Interaja aqui...
     </div>
 
-    <div class="calculos">
-        <input type="number" name="num1" id="num1"> +
-        <input type="number" name="num2" id="num2">
-        <input type="button" value="Somar" onclick="somar()">
+    <div class="miniCalculator">
+        <input type="number" name="nn1" id="nn1"> X
+        <input type="number" name="nn2" id="nn2">
+        <input type="button" value="Somar"  id="Somar" onclick="somar()">
     </div>
 
-    <div class="result">Resultado...</div>
+    <div id="result">
+        Loading...
+    </div>
+
     <script>
         const interacion = document.querySelector('#interacion');
 
@@ -44,29 +89,29 @@
         interacion.addEventListener('mouseenter', entrar);
         interacion.addEventListener('mouseout', sair);
 
-        function clicar() {
-            interacion.innerText = 'clicado'
+        function clicar(){
+            interacion.innerText = 'clicou'
             interacion.style.backgroundColor = 'black'
+            interacion.style.color = 'white'
         }
 
-        function entrar() {
+        function entrar(){
             interacion.innerText = 'entrou'
         }
 
-        function sair() {
-            interacion.innerText = 'Saiu...'
-            interacion.style.backgroundColor = 'darkblue'
+        function sair(){
+            interacion.innerText = 'saiu...'
+            interacion.style.backgroundColor = 'rgb(154, 83, 219)'
         }
-
         function somar(){
-        const nm1 = document.getElementById('num1')
-        const nm2 = document.getElementById('num2')
-        const result = document.querySelector('.result')
-        const n1 = Number(nm1.value)
-        const n2 = Number(nm2.value)
-        const soma = n1 + n2
+            const nn1 = document.querySelector('#nn1')
+            const nn2 = document.querySelector('#nn2')
+            const result = document.querySelector('#result')
+            const n1 = Number(nn1.value)
+            const n2 = Number(nn2.value)
+            const soma = n1 * n2
 
-        result.innerText =  `A soma entre ${n1} e ${n2} é = ${soma}`
+            result.innerHTML = `A multiplicação entre ${n1} e ${n2} é = ${soma}`
         }
     </script>
 </body>

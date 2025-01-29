@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>VERIFICAÇÃO DE NACIONALIDADE</h1>
+    <span>Em que país você nasceu?</span>
+    <input type="text" name="pais" id="pais">
+    <input type="button" value="Nacionalidade" onclick="nacion()">
+
+    <div class="result"></div>
+
+    <script>
+        function nacion(){
+            const pais = document.querySelector('#pais')
+            const result = document.querySelector('.result')
+            const country = String(pais.value)
+
+            if(country == 'Brasil' || country == 'Mexico' || country == 'Chile'){
+                result.innerHTML = `Você nasceu no ${country}`
+            } else if(country == 'Estados Unidos'){
+                result.innerHTML = `Você nasceu nos ${country}`
+            } else if(country == 'Argentina' || country == 'Alemanha' || country == 'Espanha' || country == 'Inglaterra' || country == 'Italia'){
+                result.innerHTML = `Você nasceu na ${country}`
+            }
+        }
+    </script>
+</body>
+</html>
