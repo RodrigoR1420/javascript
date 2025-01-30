@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: lightblue;
+}
+
+header{
+    background-color: aliceblue;
+    padding: 20px;
+    text-align: center;
+}
+
+main{
+    background-color: aliceblue;
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.css{
+    margin-bottom: 10px;
+}
+
+.caixas{
+    margin-bottom: 10px;
+}
+
+.res{
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+    margin-top: 10px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <main>
+        <div class="caixas">
+            <p class="css">
+                Ano de Nascimento: <input type="number" name="ano" id="ano">
+            </p>
+
+            <p class="css">
+                Sexo: <input type="radio" name="radsex" id="masc" checked>
+                <label for="masc">Masculino</label>
+
+                <input type="radio" name="radsex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+
+            <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <div class="res">
+            <p>
+                Preencha os dados acima e veja o resultado...
+            </p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;Rd Bigode</p>
+    </footer>
+
+    <script src="js.script.js"></script>
+</body>
+</html>
