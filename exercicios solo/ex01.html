@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interatividade</title>
+    <style>
+        body{
+            background-color: rgba(0, 0, 0, 0.518);
+        }
+
+        .area{
+            background-color: lightblue;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            text-align: center;
+            line-height: 200px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.4em;
+            border-radius: 50%;
+            box-shadow: 4px 4px 10px black;
+        }
+
+        .math{
+            background-color: aliceblue;
+            text-align: center;
+            width: 600px;
+            margin: auto;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+            box-shadow: 4px 4px 10px black;
+        }
+
+        .nacion{
+            background-color: azure;
+            padding: 10px;
+            width: 500px;
+            margin: auto;
+            margin-top: 16px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px black;
+        }
+
+        .nacion > h1{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .resultado{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body onload="hora()">
+    <div class="area">
+        Interaja...
+    </div>
+
+    <div class="math">
+        <p>
+            N1 <input type="number" name="txtnumber" id="txtnumber">
+            +
+            <input type="number" name="txtnumber2" id="txtnumber2">
+            N2
+            <input type="button" value="Somar" onclick="somar()">
+        </p>
+
+        <div class="res">
+            Resultado...
+        </div>
+    </div>
+
+    <div class="nacion">
+        <h1>Who are you?</h1>
+        <p>
+            Nome completo: <input type="text" name="nome" id="nome">
+        </p>
+
+        <p>
+            Em que ano voce nasceu? <input type="number" name="anonasc" id="anonasc">
+        </p>
+
+        <p>
+            Em que país você nasceu? <input type="text" name="pais" id="pais">
+        </p>
+
+        <p>
+            Are you black? <input type="radio" name="radblack" id="Yes" checked>
+            <label for="yes">Yes</label>
+
+            <input type="radio" name="radblack" id="No">
+            <label for="No">No</label>
+        </p>
+
+        <p>
+            Sexo: <input type="radio" name="radsex" id="masc" checked>
+            <label for="masc">Masculino</label>
+            
+            <input type="radio" name="radsex" id="fem">
+            <label for="fem">Feminino</label>
+        </p>
+
+        <input type="button" value="Verificar Dados" onclick="verificar()">
+
+        <div class="resultado">
+            You are ...
+        </div>
+    </div>
+    <script>
+        const area = document.querySelector('.area')
+
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout', sair)
+
+        function clicar(){
+            area.innerHTML = 'clicou'
+            area.style.backgroundColor = 'black'
+            area.style.color = 'white'
+        }
+
+        function entrar(){
+            area.innerHTML = 'entrou'
+            area.style.color = 'black'
+        }
+
+        function sair(){
+            area.innerHTML = 'saiu'
+            area.style.backgroundColor = 'lightblue'
+            area.style.color = 'black'
+        }
+
+        function somar(){
+            const txtn1 = document.querySelector('#txtnumber')
+        const txtn2 = document.querySelector('#txtnumber2')
+        const res = document.querySelector('.res')
+        const n1 = Number(txtn1.value)
+        const n2 = Number(txtn2.value)
+        const soma = n1 + n2
+
+        res.innerHTML = `A soma entre ${n1} e ${n2} é = ${soma}`
+        }
+
+        function verificar(){
+            const data = new Date()
+            const anoAtual = data.getFullYear()
+            const name = document.querySelector('#nome')
+            const anonasc = document.querySelector('#anonasc')
+            const nacionalidad = document.querySelector('#pais')
+            const resultado = document.querySelector('.resultado')
+            const nome = String(name.value)
+            const pais = String(nacionalidad.value)
+
+            if (anonasc.value == 0 || anonasc.value > anoAtual){
+                alert('[ERRO] Verifique os dados informados!')
+            } else{
+                const idade = anoAtual - Number(anonasc.value)
+                const radsex = document.getElementsByName('radsex')
+                const radnigga = document.getElementsByName('radblack')
+                let genero =''
+                let negro = ''
+                let nacional = ''
+
+                if(radsex[0].checked){
+                    genero = 'Masculino'
+                }else if (radsex[1].checked){
+                    genero = 'Feminino'
+                }
+
+                if(radnigga[0].checked){
+                    negro = 'é afrodescendente'
+                } else if(radnigga[1].checked){
+                    negro = 'não é afrodescendente'
+                }
+
+                if(pais == 'Brasil'){
+                    nacional = 'Brasileiro'
+                }
+
+                resultado.innerHTML = `Olá ${nome}, você é ${nacional}, tem ${idade} anos, e é do sexo ${genero}, além disso você ${negro}`
+            } 
+        }
+    </script>
+</body>
+</html>
