@@ -16,10 +16,14 @@ function verificar(){
             img.setAttribute('src', 'car.jpg')
         } else if(idade >= 17){
             res.innerHTML = 'You are very young to drive, come back here next year'
+            img.setAttribute('src', 'bike.jpg')
         } else if(idade >= 16){
             res.innerHTML = 'You are very young to drive, come back here in 2 years'
+            img.setAttribute('src', 'bike.jpg')
         } else {
             res.innerHTML = 'You are very young to drive, don´t come back here'
+            img.setAttribute('src', 'bike.jpg')
         }
+        res.appendChild(img)
     }
 }
