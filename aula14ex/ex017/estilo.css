@@ -30,3 +30,12 @@ footer{
     text-align: center;
     margin-top: 10px;
 }
+
+input{
+    padding: 2px;
+}
+
+#button{
+    width: 140px;
+    padding: 2px;
+}

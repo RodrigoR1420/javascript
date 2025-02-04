@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+body{
+    background-color: beige;
+}
+
+.redondo{
+    background-color: darkgreen;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+    border-radius: 50%;
+    margin: auto;
+    color: white;
+    box-shadow: 4px 4px 11px black;
+}
+
+.math{
+    background-color: azure;
+    width: 450px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 4px 4px 11px black;
+}
+
+#button{
+    margin-top: 10px;
+    padding: 5px;
+    width: 100px;
+}
+
+main{
+    background-color: aliceblue;
+    width: 350px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    box-shadow: 4px 4px 11px black;
+    border-radius: 10px;
+}
+
+#but{
+    padding: 5px;
+    width: 100px;
+    display: block;
+}
+
+img{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin-top: 10px;
+}
+
+article{
+    background-color: lightblue;
+    width: 300px;
+    margin: auto;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 11px black;
+}

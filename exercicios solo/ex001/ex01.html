@@ -221,8 +221,7 @@
             const resultad = document.querySelector('#foto')
             const clas = document.querySelector('.horario')
             const Data = new Date()
-            //const agora = Data.getHours()
-            const agora = 1
+            const agora = Data.getHours()
 
             if(agora >= 6 && agora <= 12){
                 msgg.innerHTML = `São ${agora} horas da manhã!`
