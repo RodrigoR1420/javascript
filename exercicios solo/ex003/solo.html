@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Teste de Habilitação</h1>
+    <header class="js">
+        <h1>Teste de Js</h1>
     </header>
     <main>
         <div class="caixas">
@@ -16,17 +16,49 @@
                 Em que ano você nasceu? <input type="number" name="ano" id="ano">
             </p>
             <p class="css">
-                <input type="button" value="Verificar" onclick="verificar()">
+                <input id="button" type="button" value="Verificar" onclick="verificar()">
             </p>
         </div>
         <div class="result">
             <p>Resultado...</p>
         </div>
     </main>
-    <footer>
-        <p>&copy;Rd Bigode</p>
-    </footer>
 
+    <section>
+        <div class="contador">
+            <p id="stilo">
+                Início: <input type="number" name="inicio" id="num1">
+            </p>
+
+            <p id="stilo">
+                Fim: <input type="number" name="fim" id="num2">
+            </p>
+
+            <p id="stilo">
+                Passo: <input type="number" name="passo" id="num3">
+            </p>
+
+            <p id="stilo">
+                <input id="button" type="button" value="Contar" onclick="contar()">
+            </p>
+        </div>
+        <div class="resultado">
+            Preparando a contagem...
+        </div>
+    </section>
+
+    <article>
+        <div class="number">
+            <p>
+                Número: <input type="number" name="tabb" id="tabuada">
+                <input type="button" value="Gerar Tabuada" onclick="tabu()" id="button">
+            </p>
+
+            <select name="tabuaida" id="tab" size="10">
+                <option>Digite um número para ver a tabuada:</option>
+            </select>
+        </div>
+    </article>
     <script src="teste.js"></script>
 </body>
 </html>
