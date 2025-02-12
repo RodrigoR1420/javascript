@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: lightgoldenrodyellow;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header{
+            background-color: rgb(253, 253, 236);
+            padding: 20px;
+            text-align: center;
+
+        }
+
+        section{
+            background-color: goldenrod;
+            width: 400px;
+            padding: 14px;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 11px gold;
+        }
+
+        .css{
+            margin-bottom: 10px;
+        }
+
+        #button{
+            padding: 5px;
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        main{
+            background-color: gold;
+            width: 400px;
+            padding: 14px;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 13px goldenrod;
+        }
+
+        select{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header id="interacao">
+        <h1>Interação</h1>
+    </header>
+
+    <section>
+        <div class="contagem">
+            <p class="css">
+                Início: <input type="number" name="ini" id="inicio">
+            </p>
+
+            <p class="css">
+                Fim: <input type="number" name="fini" id="fim">
+            </p>
+
+            <p class="css">
+                Passo: <input type="number" name="pas" id="passo">
+            </p>
+
+            <input id="button" type="button" value="Iniciar Contagem" onclick="contar()">
+        </div>
+        <div class="res">
+            <p>Preparando a contagem...</p>
+        </div>
+    </section>
+
+    <main>
+        <div class="tabuada">
+            <p>
+                Número: <input type="number" name="tabu" id="tabuada">
+                <input type="button" value="Verificar Tabuada" onclick="Verificar()">
+            </p>
+        </div>
+        <div class="result">
+            <select name="select" id="tab" size="10">
+                <option>Digite um número para ver a tabuada:</option>
+            </select>
+        </div>
+    </main>
+    <script>
+        const interacion = document.querySelector('#interacao')
+
+        interacion.addEventListener('click', click)
+        interacion.addEventListener('mouseenter', enter)
+        interacion.addEventListener('mouseout', out)
+
+        function click(){
+            interacion.innerHTML = 'clicked'
+            interacion.style.font = 'bold 2em arial'
+            interacion.style.backgroundColor = 'yellow'
+        }
+
+        function enter(){
+            interacion.innerHTML = 'enter'
+            interacion.style.font = 'bold 2em arial'
+            interacion.style.backgroundColor = 'gold'
+        }
+
+        function out(){
+            interacion.innerHTML = 'out'
+            interacion.style.font = 'bold 2em arial'
+            interacion.style.backgroundColor = 'gold'
+        }
+
+        function contar(){
+            const inicio = document.querySelector('#inicio')
+            const fim = document.querySelector('#fim')
+            const passo = document.querySelector('#passo')
+            const res = document.querySelector('.res')
+
+            if(inicio.value == 0 || fim.value ==0 || passo.value == ''){
+                alert('[ERRO] Verifique os dados inseridos abaixo')
+            } else{
+                let i = Number(inicio.value)
+                let f = Number(fim.value)
+                let p = Number(passo.value)
+
+                res.innerHTML = 'Contando: <br>'
+
+                if(i < f){
+                    for(let c = i; c <= f; c += p){
+                        res.innerHTML += `${c} \u{1F449}`
+                    }
+                } else{
+                    for(let c = i; c >= f; c -= p){
+                        res.innerHTML += `${c} \u{1F449}`
+                    }
+                }
+            }
+        }
+
+        function Verificar(){
+            const tabuada = document.querySelector('#tabuada')
+            const tab = document.querySelector('#tab')
+
+            if(tabuada.value == ''){
+                alert('[ERRO] Digite um número para ver sua tabuada!')
+            }else{
+                const tabu = Number(tabuada.value)
+                let t = tabu
+                for(let c = 1; c <= 10; c++){
+                    let item = document.createElement('option')
+                    item.innerHTML = `${t} X ${c} = ${t*c}`
+                    tab.value = `tab${t}`
+                    tab.appendChild(item)
+                   }
+                }
+            }
+    </script>
+</body>
+</html>
