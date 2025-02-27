@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: lightgreen;
+    text-align: center;
+    padding: 20px;
+}
+
+main{
+    background-color: lightyellow;
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 13px;
+    box-shadow: 4px 4px 11px goldenrod;
+}
+
+.caixas{
+    margin-bottom: 20px;
+}
+
+.css{
+    margin-bottom: 10px
+}
+
+img{
+    border-radius: 50%;
+}
