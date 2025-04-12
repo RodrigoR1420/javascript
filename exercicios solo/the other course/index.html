@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aliceblue;
+        }
+
+        header{
+            background-color: bisque;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main{
+            background-color: lightblue;
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 4px 4px 6px black;
+        }
+
+        #stilo{
+            padding: 5px;
+        }
+
+        #button{
+            padding: 5px;
+            height: 30px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header class="js">
+        <h1>Teste js</h1>
+    </header>
+
+    <main>
+        <div>
+            <p id="stilo">
+                inicio: <input type="number" name="num" id="inicio">
+            </p>
+            <p id="stilo">
+                Fim: <input type="number" name="fi" id="fim">
+            </p>
+            <p id="stilo">
+                Passo: <input type="number" name="pas" id="passo">
+            </p>
+            <p id="button">
+                <input type="button" id="button" value="contar" onclick="contar()">
+            </p>
+        </div>
+        <div>
+            <p id="stilo" class="resultado">
+                preparando a contagem...
+            </p>
+        </div>
+    </main>
+
+    <script src="test.js"></script>
+</body>
+</html>
